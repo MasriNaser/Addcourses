@@ -62,6 +62,8 @@ class ListItem extends Component {
             }}
             defaultValue={this.props.details.name}
             type='text'
+            placeholder='Edit your course...'
+            autoFocus
             required
           />
         </div>
@@ -85,4 +87,3 @@ ListItem.prototypes = {
   isEdit: PropTypes.bool.isRequired
 };
 export default ListItem;
-

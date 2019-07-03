@@ -1,6 +1,7 @@
 //init firebase
 import firebase from 'firebase/app';
-import 'firebase/storage';
+import 'firebase/firestore';
+
 const config = {
   apiKey: 'AIzfhrwkKhDBFHbntnKhTahHjkNK6FG875dSB6y',
   authDomain: 'typecode-76g33.firebaseapp.com',
@@ -10,18 +11,6 @@ const config = {
   messagingSenderId: '547432956432'
 };
 firebase.initializeApp(config);
-var db = firebase.firestore();
-// db.collection('users')
-//   .add({
-//     first: 'Ada',
-//     last: 'Lovelace',
-//     born: 1815
-//   })
-//   .then(function(docRef) {
-//     console.log('Document written with ID: ', docRef.id);
-//   })
-//   .catch(function(error) {
-//     console.error('Error adding document: ', error);
-//   });
+let db = firebase.firestore();
 
-export default firebase;
+export default db;

@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 const AddForm = props => {
   return (
     <Form onSubmit={props.ookNaarForm}>
-      <input value={props.currentEmpty} type='text' onChange={props.naarForm} />
+      <input value={props.currentEmpty} type='text' onChange={props.naarForm} 
+      placeholder='Add a course here...'
+      autoFocus
+      />
       <Button style={buttonStyle} type='submit'>
-        Add a course:)
+        Please add a course
       </Button>
     </Form>
   );

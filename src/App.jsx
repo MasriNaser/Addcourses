@@ -4,7 +4,7 @@ import AddForm from './components/AddForm';
 import ListItem from './components/ListItem';
 import { Container, Header, Message } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import firebase from './components/FireStore';
+import { db } from './components/FireStore';
 
 //init constructor with fixed state
 
@@ -17,7 +17,6 @@ class App extends Component {
       current: ''
     };
   }
-
   // git the value for updateCourse
   updateCourse = e => {
     this.setState({
