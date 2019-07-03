@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-jest": "^24.8.0",
     "enzyme-react-16-adapter-setup": "^0.1.0",
     "firebase": "^6.2.4",
     "jest-enzyme": "^7.0.2",
@@ -14,8 +15,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
-    "watch": "jest --watch",
+    "test": "react-scripts test",
+    "watch": "react-scripts test --watch",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,13 +39,5 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
     "react-test-renderer": "^16.8.6"
-  },
-  "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
   }
 }

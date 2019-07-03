@@ -84,6 +84,7 @@ class ListItem extends Component {
 ListItem.prototypes = {
   renderUpdateEdit: PropTypes.func.isRequired,
   renderCourse: PropTypes.func.isRequired,
-  isEdit: PropTypes.bool.isRequired
+  isEdit: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
 };
 export default ListItem;

@@ -4,8 +4,8 @@ import AddForm from './components/AddForm';
 import ListItem from './components/ListItem';
 import { Container, Header, Message } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { db } from './components/FireStore';
-
+import firebase from 'firebase/app';
+import {storage} from './components/FireStore'
 //init constructor with fixed state
 
 class App extends Component {
@@ -17,6 +17,14 @@ class App extends Component {
       current: ''
     };
   }
+  // componentDidMount (){
+  //   console.log(firebase)
+  //   storage.collection('users').get().then(snapshot => {
+  //     snapshot.docs.forEach(doc => {
+  //         console.log(doc);
+  //     });
+  // });
+  // }
   // git the value for updateCourse
   updateCourse = e => {
     this.setState({
