@@ -17,14 +17,13 @@ class App extends Component {
       current: ''
     };
   }
-  // componentDidMount (){
-  //   console.log(firebase)
-  //   storage.collection('users').get().then(snapshot => {
-  //     snapshot.docs.forEach(doc => {
-  //         console.log(doc);
-  //     });
-  // });
-  // }
+   componentDidMount (){
+    //console.log(firebase)
+    storage.collection("courses").doc("9aEefojR7Jz6Ta0Lo0th")
+    .onSnapshot(function(doc) {
+      // console.log("Current data: ", doc.data());
+    });
+  }
   // git the value for updateCourse
   updateCourse = e => {
     this.setState({

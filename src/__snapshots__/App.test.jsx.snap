@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`re 1`] = `ShallowWrapper {}`;
+
+exports[`rednder again 1`] = `ShallowWrapper {}`;
+
+exports[`rednder correctly 1`] = `ShallowWrapper {}`;
+
+exports[`rednder correctly again 1`] = `ShallowWrapper {}`;
+
+exports[`render our courses 1`] = `ShallowWrapper {}`;
