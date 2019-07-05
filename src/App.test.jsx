@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import App from './App';
-import { exportAllDeclaration } from '@babel/types';
 
 it('rednder correctly', () => {
   const wrapper = shallow(<App current='' show={true} course={[]} />);

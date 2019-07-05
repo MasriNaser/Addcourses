@@ -5,7 +5,7 @@ import ListItem from './components/ListItem';
 import { Container, Header, Message } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
-import {storage} from './components/FireStore'
+import { storage } from './components/FireStore';
 //init constructor with fixed state
 
 class App extends Component {
@@ -17,12 +17,13 @@ class App extends Component {
       current: ''
     };
   }
-   componentDidMount (){
-    //console.log(firebase)
-    storage.collection("courses").doc("9aEefojR7Jz6Ta0Lo0th")
-    .onSnapshot(function(doc) {
-      // console.log("Current data: ", doc.data());
+  componentDidMount() {
+    console.log(firebase);
+    let test = storage.collection('courses');
+    test.get().then(snapshot => {
+      console.log(snapshot.docs);
     });
+    console.log(test);
   }
   // git the value for updateCourse
   updateCourse = e => {
