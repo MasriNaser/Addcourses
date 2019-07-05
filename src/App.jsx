@@ -21,8 +21,10 @@ class App extends Component {
     console.log(firebase);
     let test = storage.collection('courses');
     test.get().then(snapshot => {
-      console.log(snapshot.docs);
-    });
+      snapshot.docs.forEach(doc=>{
+        console.log(doc.data())
+      })
+    }); 
     console.log(test);
   }
   // git the value for updateCourse

@@ -1,4 +1,5 @@
 //init firebase
+
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -13,8 +14,6 @@ const app = firebase.initializeApp({
 });
 
 const storage = app.firestore();
-//const ref = storage.ref('users');
-//storage.settings({timestampInSnapshots: true})
 export { storage };
 // import firebase from 'firebase/app';
 // import 'firebase/firestore';
