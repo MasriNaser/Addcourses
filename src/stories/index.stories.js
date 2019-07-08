@@ -17,7 +17,8 @@ storiesOf('Button', module)
       </span>
     </Button>
   ));
-  storiesOf('Welcome', module).add('to Storybook', () => <Addform showApp={linkTo('Button')} />);
+  storiesOf('add a course', module).add('adding', () => <Addform showApp={linkTo('Button')} />);
+  
   storiesOf('Button', module)
   .add('with text', () => <Button onClick={action('clicked')}>Hola!</Button>)
   .add('just to test', () => (

@@ -2,9 +2,10 @@ import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 const AddForm = props => {
+  const {naarForm,ookNaarForm,currentEmpty} = props
   return (
-    <Form onSubmit={props.ookNaarForm}>
-      <input value={props.currentEmpty} type='text' onChange={props.naarForm} 
+    <Form onSubmit={ookNaarForm}>
+      <input value={currentEmpty} type='text' onChange={naarForm} 
       placeholder='Add a course here...'
       autoFocus
       />
