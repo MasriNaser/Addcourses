@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button, List, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+
+import Item from './Item';
 class ListItem extends Component {
   state = {
     isEdit: false,
@@ -10,32 +12,19 @@ class ListItem extends Component {
 
   // render course item
   renderCourse = () => {
+    // onClick={() => {
+    //   this.props.naarList(this.props.index);
+    // }}
+    // ) => {
+    //   this.toggleState();
+    // }
+    // this.props.details.name
     return (
-      <List divided verticalAlign='middle'>
-        <List.Item>
-          <List.Content floated='right'>
-            <Button
-              onClick={() => {
-                this.props.naarList(this.props.index);
-              }}
-            >
-              Delete
-            </Button>
-          </List.Content>
-          <List.Content floated='right'>
-            <Button
-              onClick={() => {
-                this.toggleState();
-              }}
-            >
-              Edit
-            </Button>
-          </List.Content>
-          <List.Content>
-            <Header>{this.props.details.name}</Header>
-          </List.Content>
-        </List.Item>
-      </List>
+      <Item
+        name={this.props.details.name}
+        onEdit={() => this.toggleState()}
+        onDelete={() => this.props.naarList(this.props.index)}
+      />
     );
   };
   // toggleState
@@ -85,6 +74,6 @@ ListItem.prototypes = {
   renderUpdateEdit: PropTypes.func.isRequired,
   renderCourse: PropTypes.func.isRequired,
   isEdit: PropTypes.bool.isRequired,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired
 };
 export default ListItem;
