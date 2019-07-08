@@ -9,11 +9,11 @@ const stories = storiesOf('AddForm', module);
 stories
   .add('With Text', () => (
     <AddForm
-      naarForm={() => {}}
+    updateForm={action('clicked')}
       currentEmpty='Anything'
       buttonName='Anything'
     />
   ))
   .add('Without text', () => (
-    <AddForm naarForm={() => {}} currentEmpty='' buttonName='' />
+    <AddForm updateForm={action('clicked')} currentEmpty='' buttonName='' />
   ));

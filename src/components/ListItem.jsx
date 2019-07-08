@@ -18,21 +18,21 @@ class ListItem extends Component {
       <Item
         name={this.props.details.name}
         onEdit={() => this.toggleState()}
-        onDelete={() => this.props.naarList(this.props.index)}
+        onDelete={() => this.props.ToList(this.props.index)}
       />
     );
   };
   // toggleState
   toggleState = () => {
-    let test = this.state.isEdit;
+    let copyEdit = this.state.isEdit;
     this.setState({
-      isEdit: !test
+      isEdit: !copyEdit
     });
   };
   // updateCourseItem
   updateCourseItem = e => {
     e.preventDefault();
-    this.props.editCourseNaarList(this.props.index,this.state.inputValue);
+    this.props.editCourseList(this.props.index, this.state.inputValue);
     this.toggleState();
   };
   inputOnChange = e => {

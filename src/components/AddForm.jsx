@@ -2,13 +2,13 @@ import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 const AddForm = props => {
-  const { naarForm, ookNaarForm, currentEmpty, buttonName } = props;
+  const { updateForm, submitForm, currentEmpty, buttonName } = props;
   return (
-    <Form onSubmit={ookNaarForm}>
+    <Form onSubmit={submitForm}>
       <input
         value={currentEmpty}
         type='text'
-        onChange={naarForm}
+        onChange={updateForm}
         placeholder='Add a course here...'
         autoFocus
       />
@@ -20,7 +20,7 @@ const AddForm = props => {
 };
 //propTypes
 AddForm.propTypes = {
-  naarForm: PropTypes.func.isRequired,
+  updateForm: PropTypes.func.isRequired,
   currentEmpty: PropTypes.string.isRequired,
   buttonName: PropTypes.string
 };

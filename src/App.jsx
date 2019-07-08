@@ -51,7 +51,7 @@ class App extends Component {
     //e.currentTarget.reset(); //to rest the input but it did not work!
   };
   //method to delete a course from an array
-  deletCourse = index => {
+  deleteCourse = index => {
     let allCourses = this.state.courses; // copy from state
     allCourses.splice(index, 1); //delete on element from an array by using index as an id (not a good way but...)
     this.setState({
@@ -77,9 +77,9 @@ class App extends Component {
         <ListItem
           details={i}
           key={index}
-          naarList={this.deletCourse} //send delete method to list as props
+          ToList={this.deleteCourse} //send delete method to list as props
           index={index}
-          editCourseNaarList={this.editCourse} //send edit method to list as props
+          editCourseList={this.editCourse} //send edit method to list as props
           courses={this.state.courses} //send courses as props
         />
       );
@@ -90,8 +90,8 @@ class App extends Component {
           our courses
         </Header>
         <AddForm
-          naarForm={this.updateCourse} //send updateCourse as props to AddForm component
-          ookNaarForm={this.addCourse} //send addCourse as props to AddForm component
+          updateForm={this.updateCourse} //send updateCourse as props to AddForm component
+          submitForm={this.addCourse} //send addCourse as props to AddForm component
           currentEmpty={this.state.current} //send current as props to AddForm component
         />
         <ul style={holderList}>
