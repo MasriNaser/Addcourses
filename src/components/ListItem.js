@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
-import { Button, List, Header } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 import Item from './Item';
+import Update from './Update';
+
 class ListItem extends Component {
   state = {
     isEdit: false,
-    courses: this.props.courses
+    courses: this.props.courses,
+    inputValue: ''
   };
-  //textInput = React.createRef(); if u want to use another way for ref
+  //textInput = React.createRef(); another way for ref
 
   // render course item
   renderCourse = () => {
-    // onClick={() => {
-    //   this.props.naarList(this.props.index);
-    // }}
-    // ) => {
-    //   this.toggleState();
-    // }
-    // this.props.details.name
     return (
       <Item
         name={this.props.details.name}
@@ -37,27 +32,22 @@ class ListItem extends Component {
   // updateCourseItem
   updateCourseItem = e => {
     e.preventDefault();
-    this.props.editCourseNaarList(this.props.index, this.input.value);
+    this.props.editCourseNaarList(this.props.index,this.state.inputValue);
     this.toggleState();
+  };
+  inputOnChange = e => {
+    this.setState({
+      inputValue: e.target.value
+    });
   };
   //method for update
   renderUpdateEdit = () => {
     return (
-      <form onSubmit={this.updateCourseItem}>
-        <div className='ui focus input'>
-          <input
-            ref={v => {
-              this.input = v;
-            }}
-            defaultValue={this.props.details.name}
-            type='text'
-            placeholder='Edit your course...'
-            autoFocus
-            required
-          />
-        </div>
-        <Button>update Course</Button>
-      </form>
+      <Update
+        onSubmit={this.updateCourseItem}
+        defaultValue={this.props.details.name}
+        onChange={this.inputOnChange}
+      />
     );
   };
   //if isEdit is true render the edit method otherwise render list component
