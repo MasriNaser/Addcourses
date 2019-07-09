@@ -52,11 +52,13 @@ class App extends Component {
   };
   //method to delete a course from an array
   deleteCourse = index => {
-    let allCourses = this.state.courses; // copy from state
-    allCourses.splice(index, 1); //delete on element from an array by using index as an id (not a good way but...)
-    this.setState({
-      courses: allCourses //update state
-    });
+    if (window.confirm('Areyou sure that you want to delete it?')){
+      let allCourses = this.state.courses; // copy from state
+      allCourses.splice(index, 1); //delete on element from an array by using index as an id (not a good way but...)
+      this.setState({
+        courses: allCourses //update state
+      });
+    }
   };
   // method to edit a course, pass two parameters
   editCourse = (index, value) => {
