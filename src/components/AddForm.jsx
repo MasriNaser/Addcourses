@@ -4,15 +4,16 @@ import PropTypes from 'prop-types';
 const AddForm = props => {
   const { updateForm, submitForm, currentEmpty, buttonName } = props;
   return (
-    <Form onSubmit={submitForm}>
+    <Form date-test="dataForm" onSubmit={submitForm}>
       <input
+      date-test="inputData"
         value={currentEmpty}
         type='text'
         onChange={updateForm}
         placeholder='Add a course here...'
         autoFocus
       />
-      <Button style={buttonStyle} type='submit'>
+      <Button data-test='buttonData' style={buttonStyle} type='submit'>
         {buttonName}
       </Button>
     </Form>

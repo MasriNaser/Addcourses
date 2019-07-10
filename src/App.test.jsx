@@ -1,35 +1,60 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow} from 'enzyme';
 import App from './App';
 
-it('rednder correctly', () => {
-  const wrapper = shallow(<App current='' show={true} course={[]} />);
-  expect(wrapper).toMatchSnapshot();
-});
-it('render our courses', () => {
-  const wrapper = shallow(<App />);
-  const ourCourses = <App size='large'>our courses</App>;
-  expect(wrapper.contains('our courses')).toEqual(true);
+//using data attribute
+const findByTestAttribute = (component, attribute) => {
+  const wrapper = component.find(`[data-test='${attribute}']`);
+  return wrapper;
+};
+//refactoring
+const setUp = (props = {}) => {
+  const component = shallow(<App {...props} />);
+  return component;
+};
+
+//10-07-2019
+//it() or test() both method are almost the same.
+//it works
+// it('it should render without errors', () => {
+//   expect(1).toBe(3);
+// });
+//you can add describe and nasted describe
+// describe('App Component', ()=>{
+//   describe('nasted',()=>{
+//     it('it should render without errors', () => {
+//       expect(3).toBe(3);
+//       });
+//   })
+// })
+//to test by using shallow
+//beforeEach it runs before every single test
+//data-test is attribute instead of className
+describe('App Component', () => {
+  let component;
+  beforeEach(() => {
+    component = setUp();
+  });
+  it('It should find container', () => {
+    //const component = setUp();//copy of component
+    // console.log(component.debug());
+    const wrapper = findByTestAttribute(component, 'container'); // grabbing the shallow and searching for that className
+    expect(wrapper.length).toBe(1); //at least 1
+  });
+  it('should render a ', () => {
+    //const component = setUp();
+    const wrapper = findByTestAttribute(component, 'headerCourse');
+    expect(wrapper.length).toBe(1);
+  });
 });
 
-// describe('First React component test with Enzyme', () => {
-//   it('renders without crashing', () => {
-//     mount(<App current='' show={true} course={[]} />);
-//   });
+// it('rednder correctly', () => {
+//   const wrapper = shallow(<App current='' show={true} course={[]} />);
+//   expect(wrapper).toMatchSnapshot();
+// });
+// it('render our courses', () => {
+//   const wrapper = shallow(<App />);
+//   const ourCourses = <App size='large'>our courses</App>;
+//   expect(wrapper.contains('our courses')).toEqual(true);
 // });
 
-/**
- * show: PropTypes.bool,
-  courses: PropTypes.array,
-  current: PropTypes.string
- */
-
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App';
-
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });

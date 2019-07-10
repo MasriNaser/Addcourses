@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`it  1`] = `ShallowWrapper {}`;
+
+exports[`it should render without 1`] = `ShallowWrapper {}`;
+
+exports[`it should render without errors 1`] = `ShallowWrapper {}`;
+
 exports[`re 1`] = `ShallowWrapper {}`;
 
 exports[`rednder again 1`] = `ShallowWrapper {}`;

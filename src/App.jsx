@@ -14,7 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       show: false,
-      courses: [{ name: 'html' }, { name: 'java' }, { name: 'c#' }],
+      courses: [],
       current: '',
       loader: true,
     };
@@ -97,9 +97,9 @@ class App extends Component {
       );
     });
     return (
-      <Container>
-        <Header style={headerStyle} size='large'>
-          our courses
+      <Container data-test="container">
+        <Header data-test='headerCourse' style={headerStyle} size='large'>
+          our courses 
         </Header>
         <AddForm
           updateForm={this.updateCourse} //send updateCourse as props to AddForm component
