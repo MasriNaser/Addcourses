@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import AddForm from './components/AddForm';
 import ListItem from './components/ListItem';
-import { Container, Header, Message } from 'semantic-ui-react';
+import { Container, Header, Message, Dimmer, Loader } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import firebase from 'firebase/app';
 import { storage } from './components/FireStore';
+
 //init constructor with fixed state
 
 class App extends Component {
@@ -14,10 +15,12 @@ class App extends Component {
     this.state = {
       show: false,
       courses: [{ name: 'html' }, { name: 'java' }, { name: 'c#' }],
-      current: ''
+      current: '',
+      loader: true,
     };
   }
   componentDidMount() {
+    setTimeout(() => this.setState({ loader: false }), 700);
     console.log(firebase);
     let test = storage.collection('courses');
     test.get().then(snapshot => {
@@ -72,6 +75,13 @@ class App extends Component {
 
   //render two components, listitem && addform
   render() {
+    if (this.state.loader) {
+      return (
+          <Dimmer active inverted>
+              <Loader inverted content="Loading"/>
+          </Dimmer>
+      )
+  }
     let copySate = this.state.courses; //copy from state
     let list = copySate.map((i, index) => {
       //map throw list
