@@ -30,7 +30,7 @@ class App extends Component {
     }); 
     console.log(test);
   }
-  // git the value for updateCourse
+  //git the value for updateCourse
   updateCourse = e => {
     this.setState({
       current: e.target.value
@@ -99,7 +99,7 @@ class App extends Component {
     return (
       <Container data-test="container">
         <Header data-test='headerCourse' style={headerStyle} size='large'>
-          our courses 
+          ouur courses 
         </Header>
         <AddForm
           updateForm={this.updateCourse} //send updateCourse as props to AddForm component
@@ -109,7 +109,7 @@ class App extends Component {
         <ul style={holderList}>
           {this.state.courses.length === 0 && (
             <Message info>
-              <Message.Header>There is no courses...Add new one</Message.Header>
+              <Message.Header>There is no courses...Add a new one</Message.Header>
             </Message>
           )}
           {this.state.courses.length !== 0 && list}

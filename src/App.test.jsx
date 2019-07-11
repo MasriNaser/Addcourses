@@ -1,7 +1,16 @@
 import React from 'react';
-import { shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import App from './App';
 
+
+
+// see the outout
+// describe('App coomonent', () => {
+//   it('should render', () => {
+//     const wrapper = shallow(<App />);
+//     console.log(wrapper.debug());
+//   });
+// });
 //using data attribute
 const findByTestAttribute = (component, attribute) => {
   const wrapper = component.find(`[data-test='${attribute}']`);
@@ -39,13 +48,21 @@ describe('App Component', () => {
     //const component = setUp();//copy of component
     // console.log(component.debug());
     const wrapper = findByTestAttribute(component, 'container'); // grabbing the shallow and searching for that className
-    expect(wrapper.length).toBe(1); //at least 1
+    expect(wrapper.length).toBe(0); //at least one
   });
   it('should render a ', () => {
     //const component = setUp();
     const wrapper = findByTestAttribute(component, 'headerCourse');
-    expect(wrapper.length).toBe(1);
+    expect(wrapper.length).toBe(0);
   });
+  it("contains correct text", ()=>{
+    const wrapper = findByTestAttribute(component,'[currentEmpty="something]');
+    expect(wrapper.text()).toBe('name')
+  });
+  it('snapshot',()=>{
+    expect(component).toMatchSnapshot()
+  })
+
 });
 
 // it('rednder correctly', () => {
@@ -57,4 +74,3 @@ describe('App Component', () => {
 //   const ourCourses = <App size='large'>our courses</App>;
 //   expect(wrapper.contains('our courses')).toEqual(true);
 // });
-
