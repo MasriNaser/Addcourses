@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddForm component should take snapshot 1`] = `
+<Form
+  as="form"
+  date-test="dataForm"
+>
+  <input
+    autoFocus={true}
+    date-test="inputData"
+    onChange={[MockFunction onClick]}
+    placeholder="Add a course here..."
+    type="text"
+    value=""
+  />
+  <Button
+    as="button"
+    data-test="buttonData"
+    style={
+      Object {
+        "margin": "10px 44%",
+      }
+    }
+    type="submit"
+  />
+</Form>
+`;

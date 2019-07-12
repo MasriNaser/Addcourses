@@ -16,7 +16,7 @@ describe('App component', () => {
     console.log(wrapper.debug());
   });
 });
-///
+//test if the components is passed to app.js
 describe('App component', () => {
  
   const wrapper = shallow(<App state={state}/>);
