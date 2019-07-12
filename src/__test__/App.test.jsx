@@ -4,15 +4,22 @@ import App from '../App';
 import toJson from 'enzyme-to-json';
 
 //see the out put
+const state = {
+  show: false,
+  courses: [],
+  current: '',
+  loader: false
+};
 describe('App component', () => {
   it('should render', () => {
-    const wrapper = shallow(<App />);
+    const wrapper = shallow(<App state={state} />);
     console.log(wrapper.debug());
   });
 });
 ///
 describe('App component', () => {
-  const wrapper = shallow(<App loader={false}/>);
+ 
+  const wrapper = shallow(<App state={state}/>);
   it('should take snapshot', () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });

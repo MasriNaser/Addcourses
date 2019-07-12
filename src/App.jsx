@@ -14,12 +14,7 @@ import Title from './components/Title';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      show: false,
-      courses: [],
-      current: '',
-      loader: this.props.loader
-    };
+    this.state = this.props.state
   }
   componentDidMount() {
     setTimeout(() => this.setState({ loader: false }), 700);
@@ -41,6 +36,7 @@ class App extends Component {
   //method for add a course
   addCourse = e => {
     e.preventDefault();
+    this.setState({show:true})
     let getCurrent = this.state.current; //git the value from the state
     if (getCurrent === '') {
       alert('please add a course'); //show me an error message if the input is empty
@@ -50,7 +46,8 @@ class App extends Component {
       allCourses.push({ name: getCurrent }); // push one attribute to allCourses
       this.setState({
         courses: allCourses, //update the state
-        current: '' // then make the input empty
+        current: '',
+         // then make the input empty
       });
     }
     //e.currentTarget.reset(); //to rest the input but it did not work!
