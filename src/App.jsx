@@ -36,7 +36,6 @@ class App extends Component {
   //method for add a course
   addCourse = e => {
     e.preventDefault();
-    this.setState({show:true})
     let getCurrent = this.state.current; //git the value from the state
     if (getCurrent === '') {
       alert('please add a course'); //show me an error message if the input is empty

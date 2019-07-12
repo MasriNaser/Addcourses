@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`updateForm component should take for 1`] = `
+<Form
+  as="form"
+>
+  <div
+    className="ui focus input"
+  >
+    <input
+      autoFocus={true}
+      required={true}
+      type="text"
+    />
+  </div>
+  <Button
+    as="button"
+  >
+    update Course
+  </Button>
+</Form>
+`;
+
+exports[`updateForm component should take snapshot 1`] = `
+<Form
+  as="form"
+>
+  <div
+    className="ui focus input"
+  >
+    <input
+      autoFocus={true}
+      required={true}
+      type="text"
+    />
+  </div>
+  <Button
+    as="button"
+  >
+    update Course
+  </Button>
+</Form>
+`;
+
+exports[`updateForm component should take snapshot 2`] = `
+<Form
+  as="form"
+>
+  <div
+    className="ui focus input"
+  >
+    <input
+      autoFocus={true}
+      required={true}
+      type="text"
+    />
+  </div>
+  <Button
+    as="button"
+  >
+    update Course
+  </Button>
+</Form>
+`;
+
+exports[`updateForm component should take snapshot 3`] = `
+<Form
+  as="form"
+>
+  <div
+    className="ui focus input"
+  >
+    <input
+      autoFocus={true}
+      required={true}
+      type="text"
+    />
+  </div>
+  <Button
+    as="button"
+  >
+    update Course
+  </Button>
+</Form>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item component should take snapshot 1`] = `
+<List
+  divided={true}
+  verticalAlign="middle"
+>
+  <ListItem>
+    <ListContent
+      floated="right"
+    >
+      <Button
+        as="button"
+      >
+        Delete
+      </Button>
+    </ListContent>
+    <ListContent
+      floated="right"
+    >
+      <Button
+        as="button"
+        onClick={[MockFunction onEdit]}
+      >
+        Edit
+      </Button>
+    </ListContent>
+    <Liked />
+    <ListContent>
+      <Header />
+    </ListContent>
+  </ListItem>
+</List>
+`;
