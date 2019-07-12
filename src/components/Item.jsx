@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { List, Button, Header, Icon } from 'semantic-ui-react';
+import { List, Button, Header} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import Liked from './Liked';
 export default class Item extends Component {

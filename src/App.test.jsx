@@ -1,8 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
-
-
+import toJson from 'enzyme-to-json';
 
 // see the outout
 // describe('App coomonent', () => {
@@ -48,21 +47,20 @@ describe('App Component', () => {
     //const component = setUp();//copy of component
     // console.log(component.debug());
     const wrapper = findByTestAttribute(component, 'container'); // grabbing the shallow and searching for that className
-    expect(wrapper.length).toBe(0); //at least one
+    expect(wrapper.length).toBe(1); //at least one
   });
   it('should render a ', () => {
     //const component = setUp();
     const wrapper = findByTestAttribute(component, 'headerCourse');
-    expect(wrapper.length).toBe(0);
+    expect(wrapper.length).toBe(1);
   });
-  it("contains correct text", ()=>{
-    const wrapper = findByTestAttribute(component,'[currentEmpty="something]');
-    expect(wrapper.text()).toBe('name')
+  it('should contains correct text', () => {
+    const wrapper = findByTestAttribute(component, '[currentEmpty="something]');
+    expect(wrapper.text()).toBe('name');
   });
-  it('snapshot',()=>{
-    expect(component).toMatchSnapshot()
-  })
-
+  it('snapshot', () => {
+    expect(toJson(component)).toMatchSnapshot();
+  });
 });
 
 // it('rednder correctly', () => {
