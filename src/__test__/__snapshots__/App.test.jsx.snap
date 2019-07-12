@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should take snapshot 1`] = `
+<Container
+  data-test="container"
+>
+  <Title />
+  <AddForm
+    buttonName="Please add a course"
+    currentEmpty=""
+    submitForm={[Function]}
+    updateForm={[Function]}
+  />
+  <ul
+    style={
+      Object {
+        "backgroundColor": "#87CEEB",
+        "border": "1px solid black",
+        "borderRadius": "3px",
+        "padding": "10px",
+      }
+    }
+  >
+    <MessageError
+      message="there is no courses...add a new one!"
+    />
+  </ul>
+</Container>
+`;

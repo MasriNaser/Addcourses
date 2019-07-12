@@ -18,7 +18,7 @@ class App extends Component {
       show: false,
       courses: [],
       current: '',
-      loader: true
+      loader: this.props.loader
     };
   }
   componentDidMount() {
@@ -104,7 +104,11 @@ class App extends Component {
           currentEmpty={this.state.current} //send current as props to AddForm component
         />
         <ul style={holderList}>
-          {courses.length === 0 ? <MessageError message='there is no courses...add a new one!' />:this.renderList()}
+          {courses.length === 0 ? (
+            <MessageError message='there is no courses...add a new one!' />
+          ) : (
+            this.renderList()
+          )}
         </ul>
       </Container>
       //if there is no courses render a message otherwise render the list
