@@ -33,3 +33,8 @@
     transform: rotate(360deg);
   }
 } */
+/*all input filed width 100*/
+.ui.input {
+  width: 100%;
+}
+

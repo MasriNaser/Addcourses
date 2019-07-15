@@ -1,18 +1,20 @@
 import React from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Input } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 const AddForm = props => {
   const { updateForm, submitForm, currentEmpty, buttonName } = props;
   return (
     <Form date-test="dataForm" onSubmit={submitForm}>
-      <input
+     <Input
+      icon='add'
       date-test="inputData"
-        value={currentEmpty}
-        type='text'
-        onChange={updateForm}
-        placeholder='Add a course here...'
-        autoFocus
+      value={currentEmpty}
+      type='text'
+      onChange={updateForm}
+      placeholder='Add a course here...'
+      autoFocus
       />
+      
       <Button data-test='buttonData' style={buttonStyle} type='submit'>
         {buttonName}
       </Button>
@@ -31,7 +33,8 @@ AddForm.defaultProps = {
 //styling
 
 const buttonStyle = {
-  margin: '10px 44%'
+  margin: '10px 25%',
+  width: '50%'
 };
 
 export default AddForm;
