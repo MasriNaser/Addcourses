@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow,mount } from 'enzyme';
 import App from '../App';
 import toJson from 'enzyme-to-json';
 
@@ -12,8 +12,7 @@ const state = {
 };
 describe('App component', () => {
   it('should render', () => {
-    const wrapper = shallow(<App state={state} />);
-    console.log(wrapper.debug());
+    mount(<App state={state} />);
   });
 });
 //test if the components is passed to app.js

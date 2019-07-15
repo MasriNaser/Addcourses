@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Form, Input } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 export default class Update extends Component {
@@ -8,7 +8,7 @@ export default class Update extends Component {
     return (
       <Form onSubmit={onSubmit}>
         <div className='ui focus input'>
-          <input
+          <Input
             type='text'
             placeholder={defaultValue}
             onChange={onChange}

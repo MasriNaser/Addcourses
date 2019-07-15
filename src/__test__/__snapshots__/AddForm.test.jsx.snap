@@ -5,9 +5,10 @@ exports[`AddForm component should take snapshot 1`] = `
   as="form"
   date-test="dataForm"
 >
-  <input
+  <Input
     autoFocus={true}
     date-test="inputData"
+    icon="add"
     onChange={[MockFunction onClick]}
     placeholder="Add a course here..."
     type="text"
@@ -18,7 +19,8 @@ exports[`AddForm component should take snapshot 1`] = `
     data-test="buttonData"
     style={
       Object {
-        "margin": "10px 44%",
+        "margin": "10px 25%",
+        "width": "50%",
       }
     }
     type="submit"
