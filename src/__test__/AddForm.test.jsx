@@ -20,12 +20,12 @@ import toJson from 'enzyme-to-json';
 describe('AddForm', () => {
   const onChange = jest.fn().mockName('onChange');
   const wrapper = shallow(<AddForm updateForm={onChange} currentEmpty='' />);
-  expect(wrapper.find('Input').exists()).toBe(true)
-  it('should have onChange',()=>{
-    const input = wrapper.find('Input')
-    input.simulate('Input')
-    expect(wrapper.props().value).toBe('name')
-  })
+  expect(wrapper.find('Input').exists()).toBe(true);
+  it('should have onChange', () => {
+    const input = wrapper.find('Input');
+    input.simulate('onChange').value = '';
+    expect(input.props().value).toEqual('');
+  });
 });
 ///
 

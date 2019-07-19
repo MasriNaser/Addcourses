@@ -1,3 +1,4 @@
+//@flow
 import React, { Component } from 'react';
 import { Button, Form, Input } from 'semantic-ui-react';
 import PropTypes from 'prop-types';

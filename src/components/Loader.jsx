@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import { Dimmer, Loader as Spinner } from 'semantic-ui-react';
 

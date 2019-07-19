@@ -33,8 +33,12 @@
     transform: rotate(360deg);
   }
 } */
-/*all input filed width 100*/
-.ui.input {
-  width: 100%;
+/*input filed*/
+
+#root > div > form > div{
+  width: 100%
+}
+#root > div > form > div > input[type=text]{
+  width: 50%
 }
 

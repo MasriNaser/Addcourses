@@ -1,3 +1,4 @@
+//@flow
 import React from 'react';
 import { Button, Form, Input } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
@@ -13,8 +14,7 @@ const AddForm = props => {
       onChange={updateForm}
       placeholder='Add a course here...'
       autoFocus
-      />
-      
+      />      
       <Button data-test='buttonData' style={buttonStyle} type='submit'>
         {buttonName}
       </Button>
