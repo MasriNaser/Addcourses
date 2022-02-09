@@ -50,6 +50,6 @@
     "enzyme-to-json": "^3.3.5",
     "react-test-renderer": "^16.8.6",
     "semantic-ui-css": "^2.4.1",
-    "yarn": "^1.16.0"
+    "yarn": "^1.22.0"
   }
 }
